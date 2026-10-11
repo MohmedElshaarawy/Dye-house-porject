@@ -98,7 +98,7 @@
             if (entry.isIntersecting && !animated) {
                 startCounters();
                 animated = true; // منع إكرار الأنيميشن لو المستخدم طلع ونزل تاني
-                observer.unobserve(entry.target); // إيقاف المراقبة بعد التشغيل
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
