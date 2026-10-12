@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="scroll-smooth">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="./imgs/logo.jpg" type="image/x-icon">
-<link rel="stylesheet" href="./style.css">
-    <!-- Tailwind CDN -->
+ <!-- 1. تحميل سكربت Tailwind CDN أولاً -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Tailwind Config -->
+    <!-- 2. كتابة إعدادات tailwind.config بعده مباشرة -->
     <script>
         tailwind.config = {
             theme: {
@@ -33,42 +32,42 @@
             }
         }
     </script>
-    
-    <!-- CSS Plugins -->
+    <!-- 3. باقي ملفات الـ CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Custom Style for Responsive Fixes -->
-   
+    <link rel="stylesheet" href="./style.css">
+    
+    <style>
+     
+    </style>
 </head>
 
 <body class="font-sans text-gray-800 bg-light antialiased selection:bg-secondary selection:text-white">
 
-    <!-- Navbar -->
     <nav id="navbar" class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 sm:h-20 items-center">
+            <div class="flex justify-between h-20 items-center">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#home" class="flex items-center gap-2 group">
-                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white font-extrabold text-xl shadow-lg transform group-hover:scale-105 transition-transform overflow-hidden">
-                            <img src="./imgs/logo.jpg" alt="logo" class="w-full h-full object-cover">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white font-extrabold text-xl shadow-lg transform group-hover:scale-105 transition-transform">
+                            <img src="imgs/logo.jpg" alt="logo" style="width:40px; height: 40px; border-radius: 28%;">
                         </div>
-                        <span class="font-bold text-xl sm:text-2xl text-primary tracking-wide">Jade<span class="text-secondary">Textile</span></span>
+                        <span class="font-bold text-2xl text-primary tracking-wide">jade<span class="text-secondary">Textile</span></span>
                     </a>
                 </div>
                 
                 <!-- Desktop Navigation Links -->
-                <div class="hidden md:flex space-x-6 lg:space-x-8 items-center">
-                    <a href="#home" class="text-gray-700 hover:text-secondary px-2 py-1 lg:px-3 lg:py-2 rounded-md text-sm lg:text-base font-semibold transition-colors">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-secondary px-2 py-1 lg:px-3 lg:py-2 rounded-md text-sm lg:text-base font-semibold transition-colors">About Us</a>
-                    <a href="#services" class="text-gray-700 hover:text-secondary px-2 py-1 lg:px-3 lg:py-2 rounded-md text-sm lg:text-base font-semibold transition-colors">Services</a>
-                    <a href="#machinery" class="text-gray-700 hover:text-secondary px-2 py-1 lg:px-3 lg:py-2 rounded-md text-sm lg:text-base font-semibold transition-colors">Machinery</a>
-                    <a href="#contact" class="px-4 py-2 lg:px-5 lg:py-2.5 bg-secondary text-white text-sm lg:text-base font-medium rounded-lg shadow-md hover:bg-primary transition-all transform hover:-translate-y-0.5">Contact Us</a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-gray-700 hover:text-secondary px-3 py-2 rounded-md text-base font-semibold transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-secondary px-3 py-2 rounded-md text-base font-semibold transition-colors">About Us</a>
+                    <a href="#services" class="text-gray-700 hover:text-secondary px-3 py-2 rounded-md text-base font-semibold transition-colors">Services</a>
+                    <a href="#machinery" class="text-gray-700 hover:text-secondary px-3 py-2 rounded-md text-base font-semibold transition-colors">Machinery</a>
+                    <a href="#contact" class="px-5 py-2.5 bg-secondary text-white font-medium rounded-lg shadow-md hover:bg-primary transition-all transform hover:-translate-y-0.5">Contact Us</a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-secondary focus:outline-none p-2 rounded-lg" aria-label="Toggle menu">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-secondary focus:outline-none p-2" aria-label="Toggle menu">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -77,143 +76,142 @@
             </div>
         </div>
         
-        <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full left-0 right-0">
-            <div class="px-4 pt-3 pb-6 space-y-3 text-center">
-                <a href="#home" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-semibold text-gray-700 hover:bg-blue-50 hover:text-secondary transition-colors">Home</a>
-                <a href="#about" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-semibold text-gray-700 hover:bg-blue-50 hover:text-secondary transition-colors">About Us</a>
-                <a href="#services" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-semibold text-gray-700 hover:bg-blue-50 hover:text-secondary transition-colors">Services</a>
-                <a href="#machinery" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-semibold text-gray-700 hover:bg-blue-50 hover:text-secondary transition-colors">Machinery</a>
-                <a href="#contact" class="mobile-link inline-block w-full px-8 py-3 bg-secondary text-white font-bold rounded-xl shadow-lg hover:bg-blue-700 transition-all duration-300">Contact Us</a>
-            </div>
-        </div>
+      
+       <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute top-20 left-0 w-full z-40">
+    <div class="px-4 pt-3 pb-5 space-y-2 text-center">
+        <a href="#home" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-semibold text-gray-700 hover:bg-blue-50 hover:text-secondary">Home</a>
+        <a href="#about" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-semibold text-gray-700 hover:bg-blue-50 hover:text-secondary">About Us</a>
+        <a href="#services" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-semibold text-gray-700 hover:bg-blue-50 hover:text-secondary">Services</a>
+        <a href="#machinery" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-semibold text-gray-700 hover:bg-blue-50 hover:text-secondary">Machinery</a>
+        <a href="#contact" class="mobile-link block px-8 py-3 bg-secondary text-white font-bold rounded-xl shadow-lg hover:bg-blue-700 transition-all">Contact Us</a>
+    </div>
+</div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative pt-24 pb-12 px-4">
-        <div class="relative z-10 text-center max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
-            <span class="inline-block py-1.5 px-3 sm:px-4 rounded-full bg-accent/20 text-accent font-bold text-xs sm:text-sm mb-4 sm:mb-6 backdrop-blur-md border border-accent/30 tracking-wider uppercase">
+    <section id="home" class="hero-bg h-screen flex items-center justify-center relative pt-20">
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+            <span class="inline-block py-1.5 px-4 rounded-full bg-accent/20 text-accent font-bold text-sm mb-6 backdrop-blur-md border border-accent/30 tracking-wider uppercase">
                 Ismailia Industrial Zone • Egypt
             </span>
-            <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
                 Excellence in Fabric Dyeing & <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-200 to-white">Finishing</span>
             </h1>
-            <p class="text-base sm:text-lg md:text-xl text-blue-100 mb-8 sm:mb-10 max-w-2xl mx-auto drop-shadow-md leading-relaxed">
+            <p class="text-lg sm:text-xl text-blue-100 mb-10 max-w-2xl mx-auto drop-shadow-md leading-relaxed">
                 Pioneering state-of-the-art textile processing in Ismailia, delivering immaculate color fastness, advanced chemical treatments, and unmatched industrial precision.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#services" class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-secondary text-white font-bold text-sm sm:text-base rounded-xl shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1">
+                <a href="#services" class="px-8 py-4 bg-secondary text-white font-bold rounded-xl shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1">
                     Explore Our Services
                 </a>
-                <a href="#contact" class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-white/10 backdrop-blur-md border-2 border-white/80 text-white font-bold text-sm sm:text-base rounded-xl hover:bg-white hover:text-primary transition-all duration-300 transform hover:-translate-y-1">
+                <a href="#contact" class="px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white/80 text-white font-bold rounded-xl hover:bg-white hover:text-primary transition-all duration-300 transform hover:-translate-y-1">
                     Get in Touch
                 </a>
             </div>
         </div>
         
         <!-- Scroll indicator -->
-        <a href="#about" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white/80 hover:text-white animate-bounce hidden md:block" aria-label="Scroll down">
+        <a href="#about" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/80 hover:text-white animate-bounce hidden md:block">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
         </a>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 sm:py-24 bg-white">
+    <section id="about" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary mb-3 relative inline-block">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-3 relative inline-block">
                     About Jade-Textile
                     <span class="absolute w-1/2 h-1 bg-secondary -bottom-2 left-1/4 rounded-full block"></span>
                 </h2>
-                <p class="mt-4 text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto">Combining decades of chemical expertise with world-class dyeing machinery.</p>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Combining decades of chemical expertise with world-class dyeing machinery.</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl group" data-aos="fade-right" data-aos-duration="800">
                     <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-all duration-500 z-10"></div>
-                    <img src="./imgs/2.png" alt="Jade-Textile Factory" class="w-full h-[280px] sm:h-[380px] lg:h-[400px] object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <img src="./imgs/2.png" alt="Jade-Textile Factory" class="w-full h-[400px] object-cover transform group-hover:scale-105 transition-transform duration-700">
                 </div>
                 
-                <div class="space-y-4 sm:space-y-6" data-aos="fade-left" data-aos-duration="800">
-                    <span class="text-secondary font-bold text-xs sm:text-sm tracking-wider uppercase bg-blue-50 px-3 py-1 rounded-full">Established Excellence</span>
-                    <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-dark">The Premier Dyehouse in Ismailia Governorate</h3>
-                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg">
-                        <strong>Jade-Textile</strong> operates at the forefront of stylesheets and Egyptian textile processing. Located strategically in Ismailia, our plant is built to handle high-volume fabric dyeing and sophisticated finishing operations.
+                <div class="space-y-6" data-aos="fade-left" data-aos-duration="800">
+                    <span class="text-secondary font-bold text-sm tracking-wider uppercase bg-blue-50 px-3 py-1 rounded-full">Established Excellence</span>
+                    <h3 class="text-2xl md:text-3xl font-bold text-dark">The Premier Dyehouse in Ismailia Governorate</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        <strong>Jade-Textile</strong> operates at the forefront of the Egyptian textile industry. Located strategically in Ismailia, our plant is built to handle high-volume fabric dyeing and sophisticated finishing operations for local and international markets.
                     </p>
-                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                    <p class="text-gray-600 leading-relaxed">
                         We adhere to strict environmental and quality standards, using eco-friendly dyes and intelligent thermal control systems to guarantee superior color brilliance without compromising fabric integrity.
                     </p>
-                    <div class="grid grid-cols-2 gap-4 pt-2 sm:pt-4">
-                    <div class="p-3 sm:p-4 bg-gray-50 rounded-xl border border-gray-100 text-center sm:text-left">
-                        <span class="block text-2xl sm:text-3xl font-extrabold text-secondary mb-1 counter" data-target="100" data-suffix="%">0%</span>
-                        <span class="text-xs sm:text-sm text-gray-600 font-medium">Quality Compliance</span>
-                    </div>
-                    <div class="p-3 sm:p-4 bg-gray-50 rounded-xl border border-gray-100 text-center sm:text-left">
-                        <span class="block text-2xl sm:text-3xl font-extrabold text-primary mb-1 counter" data-target="24" data-suffix="/7">0/7</span>
-                        <span class="text-xs sm:text-sm text-gray-600 font-medium">Continuous Operations</span>
-                    </div>
-                </div>
+                            <div class="grid grid-cols-2 gap-4 pt-4">
+                                        <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                           <span class="block text-3xl font-extrabold text-secondary mb-1 counter" data-target="100" data-suffix="%">0%</span>
+                            <span class="text-sm text-gray-600 font-medium">Quality Compliance</span>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <!-- خليناها تبدأ من 0 لحد 24 وبعدها الـ suffix بيكمل الشكل 24/7 -->
+                            <span class="block text-3xl font-extrabold text-primary mb-1 counter" data-target="24" data-suffix="/7">0/7</span>
+                            <span class="text-sm text-gray-600 font-medium">Continuous Operations</span>
+                        </div>
+                        </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-16 sm:py-24 bg-gray-50">
+    <section id="services" class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary mb-3 relative inline-block">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-3 relative inline-block">
                     Our Core Services
                     <span class="absolute w-1/2 h-1 bg-secondary -bottom-2 left-1/4 rounded-full block"></span>
                 </h2>
-                <p class="mt-4 text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto">Comprehensive, high-precision textile treatments tailored to your exact specifications.</p>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Comprehensive, high-precision textile treatments tailored to your exact specifications.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="100">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1: Fabric Dyeing -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="100">
                     <div>
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-50 text-secondary rounded-xl flex items-center justify-center mb-5 group-hover:bg-secondary group-hover:text-white transition-colors">
-                            <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                        <div class="w-14 h-14 bg-blue-50 text-secondary rounded-xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round5" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
                         </div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-dark mb-3">Fabric Dyeing</h3>
-                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-6">
+                        <h3 class="text-2xl font-bold text-dark mb-3">Fabric Dyeing</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
                             Advanced reactive, disperse, and direct dyeing processes for cotton, polyester, blends, and specialized knits using eco-friendly formulations.
                         </p>
                     </div>
-                    <a href="#contact" class="inline-flex items-center text-secondary font-bold text-sm sm:text-base group-hover:text-primary transition-colors">
+                    <a href="#contact" class="inline-flex items-center text-secondary font-bold group-hover:text-primary transition-colors">
                         Request Service <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     </a>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="200">
+                <!-- Service 2: Color Matching -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="200">
                     <div>
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-50 text-secondary rounded-xl flex items-center justify-center mb-5 group-hover:bg-secondary group-hover:text-white transition-colors">
-                            <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 73l.01-.01M16 17l.01-.01"></path></svg>
+                        <div class="w-14 h-14 bg-blue-50 text-secondary rounded-xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 73l.01-.01M16 17l.01-.01"></path></svg>
                         </div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-dark mb-3">Color Matching</h3>
-                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-6">
+                        <h3 class="text-2xl font-bold text-dark mb-3">Color Matching</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
                             Computer-assisted spectrophotometer color matching and laboratory sample formulation to achieve precise pantone and custom shades.
                         </p>
                     </div>
-                    <a href="#contact" class="inline-flex items-center text-secondary font-bold text-sm sm:text-base group-hover:text-primary transition-colors">
+                    <a href="#contact" class="inline-flex items-center text-secondary font-bold group-hover:text-primary transition-colors">
                         Request Service <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     </a>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col justify-between group sm:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="300">
+                <!-- Service 3: Chemical Finishing -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="300">
                     <div>
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-50 text-secondary rounded-xl flex items-center justify-center mb-5 group-hover:bg-secondary group-hover:text-white transition-colors">
-                            <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                        <div class="w-14 h-14 bg-blue-50 text-secondary rounded-xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
                         </div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-dark mb-3">Chemical Finishing</h3>
-                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-6">
+                        <h3 class="text-2xl font-bold text-dark mb-3">Chemical Finishing</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
                             Specialized softening, anti-shrinkage, moisture-wicking, and antimicrobial treatments designed to upgrade fabric durability and comfort.
                         </p>
                     </div>
-                    <a href="#contact" class="inline-flex items-center text-secondary font-bold text-sm sm:text-base group-hover:text-primary transition-colors">
+                    <a href="#contact" class="inline-flex items-center text-secondary font-bold group-hover:text-primary transition-colors">
                         Request Service <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     </a>
                 </div>
@@ -221,137 +219,135 @@
         </div>
     </section>
 
-    <!-- Machinery Section -->
-    <section id="machinery" class="py-16 sm:py-24 bg-white">
+    <section id="machinery" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary mb-3 relative inline-block">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-3 relative inline-block">
                     Industrial Machinery & Facilities
                     <span class="absolute w-1/2 h-1 bg-secondary -bottom-2 left-1/4 rounded-full block"></span>
                 </h2>
-                <p class="mt-4 text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto">Equipped with cutting-edge pressure jet dyeing units and automated temperature regulators.</p>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Equipped with cutting-edge pressure jet dyeing units and automated temperature regulators.</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                <div class="space-y-4 sm:space-y-6" data-aos="fade-right">
-                    <span class="text-secondary font-bold text-xs sm:text-sm tracking-wider uppercase bg-blue-50 px-3 py-1 rounded-full">High-Tech Infrastructure</span>
-                    <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-dark">Precision Engineering for Flawless Textiles</h3>
-                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6" data-aos="fade-right">
+                    <span class="text-secondary font-bold text-sm tracking-wider uppercase bg-blue-50 px-3 py-1 rounded-full">High-Tech Infrastructure</span>
+                    <h3 class="text-2xl md:text-3xl font-bold text-dark">Precision Engineering for Flawless Textiles</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg">
                         At Jade-Textile, our plant features state-of-the-art industrial dyeing machinery engineered for high-capacity and uniform textile treatment. 
                     </p>
-                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
-                        By utilizing advanced liquor circulation systems and automated pressure-temperature controls, our machinery ensures exceptional dye penetration, preventing uneven spots and guaranteeing vibrant, long-lasting color brilliance.
+                    <p class="text-gray-600 leading-relaxed">
+                        By utilizing advanced liquor circulation systems and automated pressure-temperature controls, our machinery ensures exceptional dye penetration, preventing uneven spots and guaranteeing vibrant, long-lasting color brilliance across all fabric batches.
                     </p>
-                    <ul class="space-y-3 text-gray-700 font-medium text-sm sm:text-base pt-2">
+                    <ul class="space-y-3 text-gray-700 font-medium pt-2">
                         <li class="flex items-center gap-3">
-                            <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs sm:text-sm font-bold shrink-0">✓</span> High-capacity soft-flow jet dyeing machines
+                            <span class="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-sm font-bold">✓</span> High-capacity soft-flow jet dyeing machines
                         </li>
                         <li class="flex items-center gap-3">
-                            <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs sm:text-sm font-bold shrink-0">✓</span> Computerized temperature & pressure automation
+                            <span class="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-sm font-bold">✓</span> Computerized temperature & pressure automation
                         </li>
                         <li class="flex items-center gap-3">
-                            <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs sm:text-sm font-bold shrink-0">✓</span> Water-efficient and eco-friendly heat recovery systems
+                            <span class="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-sm font-bold">✓</span> Water-efficient and eco-friendly heat recovery systems
                         </li>
                     </ul>
                 </div>
 
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl group" data-aos="fade-left">
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Industrial machinery" class="w-full h-[280px] sm:h-[380px] lg:h-[400px] object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Industrial machinery" class="w-full h-[400px] object-cover transform group-hover:scale-105 transition-transform duration-700">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 sm:py-24 bg-gray-50">
+    <section id="contact" class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary mb-3 relative inline-block">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-3 relative inline-block">
                     Contact Us
                     <span class="absolute w-1/2 h-1 bg-secondary -bottom-2 left-1/4 rounded-full block"></span>
                 </h2>
-                <p class="mt-4 text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto">Get in touch with our team for orders, quotes, or industrial inquiries.</p>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Get in touch with our team for orders, quotes, or industrial inquiries.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Contact info cards -->
-                <div class="lg:col-span-1 bg-primary rounded-2xl shadow-xl p-6 sm:p-8 text-white flex flex-col justify-between" data-aos="fade-right">
+                <div class="lg:col-span-1 bg-primary rounded-2xl shadow-xl p-8 text-white flex flex-col justify-between" data-aos="fade-right">
                     <div>
-                        <h3 class="text-xl sm:text-2xl font-bold mb-6 border-b border-blue-500 pb-4">Plant Headquarters</h3>
+                        <h3 class="text-2xl font-bold mb-6 border-b border-blue-500 pb-4">Plant Headquarters</h3>
                         <div class="space-y-6 mt-6">
                             <div class="flex items-start gap-4">
-                                <div class="bg-blue-600 p-2.5 sm:p-3 rounded-xl shrink-0">
-                                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                <div class="bg-blue-600 p-3 rounded-xl shrink-0">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-base sm:text-lg mb-1">Address</h4>
-                                    <p class="text-blue-100 text-xs sm:text-sm leading-relaxed">Industrial Zone, Ismailia<br>Egypt</p>
+                                    <h4 class="font-semibold text-lg mb-1">Address</h4>
+                                    <p class="text-blue-100 text-sm leading-relaxed">Industrial Zone, Ismailia<br>Egypt</p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start gap-4">
-                                <div class="bg-blue-600 p-2.5 sm:p-3 rounded-xl shrink-0">
-                                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                <div class="bg-blue-600 p-3 rounded-xl shrink-0">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-base sm:text-lg mb-1">Phone</h4>
-                                    <p class="text-blue-100 text-xs sm:text-sm">+2 000 000 000</p>
+                                    <h4 class="font-semibold text-lg mb-1">Phone</h4>
+                                    <p class="text-blue-100 text-sm">+2 000 000 000 </p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start gap-4">
-                                <div class="bg-blue-600 p-2.5 sm:p-3 rounded-xl shrink-0">
-                                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                <div class="bg-blue-600 p-3 rounded-xl shrink-0">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-base sm:text-lg mb-1">Email</h4>
-                                    <p class="text-blue-100 text-xs sm:text-sm break-all">info@jadetextile.com</p>
+                                    <h4 class="font-semibold text-lg mb-1">Email</h4>
+                                    <p class="text-blue-100 text-sm">info@jadetextile.com</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="mt-8 pt-6 border-t border-blue-500/50 text-xs text-blue-200">
-                        Working Hours: Saturday – Thursday (8:00 AM – 5:00 PM)
+                        Working Hours: Saturday – Thursday (8:00 AM – 6:00 PM)
                     </div>
                 </div>
 
                 <!-- Contact form -->
-                <div class="lg:col-span-2 bg-white rounded-2xl shadow-xl p-6 sm:p-8 relative" data-aos="fade-left">
-                    <form id="contactForm" class="space-y-4 sm:space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                <div class="lg:col-span-2 bg-white rounded-2xl shadow-xl p-8 relative" data-aos="fade-left">
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label for="name" class="block text-xs sm:text-sm font-semibold text-gray-700 mb-2">Full Name</label>
-                                <input type="text" id="name" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all bg-gray-50/50 text-sm" placeholder="Enter your full name" required>
+                                <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all bg-gray-50/50" placeholder="Enter your full name" required>
                             </div>
                             <div>
-                                <label for="phone" class="block text-xs sm:text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
-                                <input type="tel" id="phone" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all bg-gray-50/50 text-sm" placeholder="Enter phone number" required>
+                                <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all bg-gray-50/50" placeholder="Enter phone number" required>
                             </div>
                         </div>
                         
                         <div>
-                            <label for="email" class="block text-xs sm:text-sm font-semibold text-gray-700 mb-2">Email Address</label>
-                            <input type="email" id="email" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all bg-gray-50/50 text-sm" placeholder="example@domain.com">
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all bg-gray-50/50" placeholder="example@domain.com">
                         </div>
                         
                         <div>
-                            <label for="message" class="block text-xs sm:text-sm font-semibold text-gray-700 mb-2">Inquiry / Message</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all resize-none bg-gray-50/50 text-sm" placeholder="Describe your fabric type, quantities, or specific dyeing requirements..." required></textarea>
+                            <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Inquiry / Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all resize-none bg-gray-50/50" placeholder="Describe your fabric type, quantities, or specific dyeing requirements..." required></textarea>
                         </div>
                         
-                        <button type="submit" class="w-full bg-secondary hover:bg-primary text-white font-bold py-3.5 sm:py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base">
+                        <button type="submit" class="w-full bg-secondary hover:bg-primary text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
                             Send Message
                         </button>
                     </form>
                     
                     <!-- Success overlay modal -->
-                    <div id="success-message" class="absolute inset-0 bg-white/95 backdrop-blur-md rounded-2xl hidden flex-col items-center justify-center z-10 p-6 sm:p-8 text-center">
-                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center mb-4">
-                            <svg class="w-7 h-7 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <div id="success-message" class="absolute inset-0 bg-white/95 backdrop-blur-md rounded-2xl flex-col items-center justify-center z-10 p-8 text-center">
+                        <div class="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                         </div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Message Sent Successfully!</h3>
-                        <p class="text-xs sm:text-base text-gray-600 mb-6">Thank you for getting in touch with Jade-Textile. Our plant team will contact you shortly.</p>
-                        <button type="button" id="resetBtn" class="px-6 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold text-sm sm:text-base rounded-xl transition-colors">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Message Sent Successfully!</h3>
+                        <p class="text-gray-600 mb-6">Thank you for getting in touch with G-Textile. Our plant team will contact you shortly.</p>
+                        <button type="button" onclick="resetForm()" class="px-6 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold rounded-xl transition-colors">
                             Send Another Message
                         </button>
                     </div>
@@ -360,13 +356,12 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-8 sm:py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 text-center md:text-left">
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
-                <span class="font-bold text-xl sm:text-2xl text-white">Jade<span class="text-secondary">Textile</span></span>
+                <span class="font-bold text-2xl text-white">Jade<span class="text-secondary">Textile</span></span>
             </div>
-            <p class="text-gray-400 text-xs sm:text-sm">
+            <p class="text-gray-400 text-sm">
                 &copy; 2026 Jade-Textile Dyehouse Plant - Ismailia. All rights reserved.
             </p>
         </div>
@@ -374,8 +369,7 @@
 
     <!-- AOS Animation Library JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <script src="java.js"></script>
+    <script src="./java.js"></script>
 
 </body>
 </html>
