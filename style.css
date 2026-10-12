@@ -2,7 +2,7 @@
         html {
             scroll-behavior: smooth;
         }
-  <style>
+
         /* منع ظهور شريط التمرير الأفقي على الهواتف */
         html, body {
             overflow-x: hidden;
@@ -21,7 +21,7 @@
         section {
             scroll-margin-top: 80px;
         }
-    </style>
+  
         /* تأثير ظل منور أزرق عند تمرير الفأرة */
 .glow-on-hover {
     transition: all 0.3s ease-in-out;
