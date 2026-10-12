@@ -2,27 +2,26 @@
         html {
             scroll-behavior: smooth;
         }
-        
-        /* Hero background with modern industrial gradient */
-        .hero-bg {
-            background: linear-gradient(135deg, rgba(15,23,42,0.85) 0%, rgba(30,58,138,0.8) 100%), 
-                        url('https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+  <style>
+        /* منع ظهور شريط التمرير الأفقي على الهواتف */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
         }
 
-        /* Custom success modal transition */
-        #success-message {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.4s ease;
+        /* ضبط خلفية الـ Hero لتناسب جميع الشاشات بدون مشاكل Performance */
+        .hero-bg {
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('./imgs/photo-1620799140408-edc6dcb6d633.avif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-        #success-message.show {
-            display: flex;
-            opacity: 1;
+
+        /* تحسين التمرير للوصلات الداخلية */
+        section {
+            scroll-margin-top: 80px;
         }
-        
+    </style>
         /* تأثير ظل منور أزرق عند تمرير الفأرة */
 .glow-on-hover {
     transition: all 0.3s ease-in-out;
