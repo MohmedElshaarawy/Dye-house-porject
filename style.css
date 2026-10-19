@@ -1,62 +1,25 @@
-   /* Smooth scrolling */
-        html {
+    html, body {
+            overflow-x: hidden;
             scroll-behavior: smooth;
         }
-        
-        /* Hero background with modern industrial gradient */
-        .hero-bg {
-            background: linear-gradient(135deg, rgba(15,23,42,0.85) 0%, rgba(30,58,138,0.8) 100%), 
-                        url('https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+
+        /* تنسيق شرائح الصور الخلفية المتحركة بسلاسة */
+        .hero-slide {
+            position: absolute;
+            inset: 0;
             background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        /* Custom success modal transition */
-        #success-message {
-            display: none;
+            background-position: center center;
+            background-repeat: no-repeat;
             opacity: 0;
-            transition: opacity 0.4s ease;
+            transition: opacity 1.5s ease-in-out, transform 4s ease-out;
+            transform: scale(1.02);
         }
-        #success-message.show {
-            display: flex;
+
+        .hero-slide.active {
             opacity: 1;
+            transform: scale(1);
         }
-        
-        /* تأثير ظل منور أزرق عند تمرير الفأرة */
-.glow-on-hover {
-    transition: all 0.3s ease-in-out;
-}
-.glow-on-hover:hover {
-    box-shadow: 0 0 20px rgba(37, 99, 235, 0.6); /* لون أزرق منور */
-    transform: translateY(-2px);
-}
 
-/* تأثير ظل منور مستمر (مثلاً للأيقونات أو اللوجو) */
-.pulse-glow {
-    box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
-    animation: glow-animation 2s infinite alternate;
-}
-
-@keyframes glow-animation {
-    0% {
-        box-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
-    }
-    100% {
-        box-shadow: 0 0 25px rgba(37, 99, 235, 0.8);
-    }
-}
-
-تنسيق قائمة الموبايل لتكون سلسة بالـ CSS
-#mobile-menu {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
-    display:hidden; /* إخفاء القائمة بشكل افتراضي */
-}
-
-#mobile-menu.open {
-    max-height: 400px; /* يجب أن يكون أكبر من ارتفاع محتوى القائمة بقليل */
-    opacity: 1;
-}
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+        }
