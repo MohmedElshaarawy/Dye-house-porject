@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="./imgs/logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -36,11 +38,6 @@
     
     <!-- AOS Library CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Custom Styles -->
-    <style>
-    
-    </style>
 </head>
 
 <body class="font-sans text-gray-800 bg-light antialiased selection:bg-secondary selection:text-white">
@@ -93,7 +90,6 @@
 
     <!-- Hero Section with Dynamic JS Background Slideshow -->
     <section id="home" class="h-screen flex items-center justify-center relative pt-20 overflow-hidden">
-        <!-- حاوية الصور الخلفية (يتم تعبئتها ديناميكياً من ملف الـ JS) -->
         <div id="hero-bg-container" class="absolute inset-0 z-0"></div>
         
         <!-- Overlay -->
@@ -101,23 +97,12 @@
 
         <!-- Hero Content -->
         <div class="relative z-10 text-center px-4 max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
-            <span class="inline-block py-1.5 px-4 rounded-full bg-accent/20 text-accent font-bold text-sm mb-6 backdrop-blur-md border border-accent/30 tracking-wider uppercase">
-                Ismailia Industrial Zone • Egypt
-            </span>
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
                 Excellence in Fabric Dyeing & <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-200 to-white">Finishing</span>
             </h1>
             <p class="text-lg sm:text-xl text-blue-100 mb-10 max-w-2xl mx-auto drop-shadow-md leading-relaxed">
                 Pioneering state-of-the-art textile processing in Ismailia, delivering immaculate color fastness, advanced chemical treatments, and unmatched industrial precision.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#services" class="px-8 py-4 bg-secondary text-white font-bold rounded-xl shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1">
-                    Explore Our Services
-                </a>
-                <a href="#contact" class="px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white/80 text-white font-bold rounded-xl hover:bg-white hover:text-primary transition-all duration-300 transform hover:-translate-y-1">
-                    Get in Touch
-                </a>
-            </div>
         </div>
         
         <!-- Scroll indicator -->
@@ -154,11 +139,11 @@
                     </p>
                     <div class="grid grid-cols-2 gap-4 pt-4">
                         <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
-                            <span class="block text-3xl font-extrabold text-secondary mb-1 counter" data-target="100" data-suffix="%">0%</span>
+                            <span class="block text-3xl font-extrabold text-secondary mb-1 counter" data-target="100" data-suffix="%">100%</span>
                             <span class="text-sm text-gray-600 font-medium">Quality Compliance</span>
                         </div>
                         <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
-                            <span class="block text-3xl font-extrabold text-primary mb-1 counter" data-target="24" data-suffix="/7">0/7</span>
+                            <span class="block text-3xl font-extrabold text-primary mb-1 counter" data-target="24" data-suffix="/7">24/7</span>
                             <span class="text-sm text-gray-600 font-medium">Continuous Operations</span>
                         </div>
                     </div>
@@ -384,11 +369,5 @@
     <!-- AOS Library JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./java.js"></script>
-    
-
-    <!-- Unified JavaScript -->
-    <script>
-        
-    </script>
 </body>
 </html>
