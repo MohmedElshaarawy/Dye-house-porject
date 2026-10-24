@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function() {
             const bgContainer = document.getElementById('hero-bg-container');
             
             if (bgContainer && heroImages.length > 0) {
-                // توليد الشرائح ديناميكياً وإضافتها للصفحة
                 heroImages.forEach((imgUrl, index) => {
                     const slide = document.createElement('div');
                     slide.className = `hero-slide ${index === 0 ? 'active' : ''}`;
@@ -49,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     bgContainer.appendChild(slide);
                 });
 
-                // تفعيل التبديل التلقائي بسلاسة كل 4 ثوانٍ
                 const slides = document.querySelectorAll('.hero-slide');
                 let currentIndex = 0;
 
