@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     slides[currentIndex].classList.remove('active');
                     currentIndex = (currentIndex + 1) % slides.length;
                     slides[currentIndex].classList.add('active');
-                }, 4000);
+                }, 5000);
             }
 
             // 4. Counter Animation via IntersectionObserver
