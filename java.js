@@ -155,7 +155,7 @@ function resetForm() {
 // Texts to be written and erased sequentially
  const data = [
       {
-        title: "Totally Complete ",
+        title: "Total things completed ",
         subtitle: "2026 505 "
       },
         {
