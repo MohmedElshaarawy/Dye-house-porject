@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // 3. Dynamic Hero Background Slideshow
-    const heroImages = [
-        "imgs/bg1.jpeg",
-        "/imgs/bg2.jpeg"
-    ];
+   const heroImages = [
+    "imgs/bg1.jpeg",
+    "imgs/bg2.jpeg", // إزالة الشرطة المائلة من البداية
+];
     const bgContainer = document.getElementById('hero-bg-container');
     
     if (bgContainer && heroImages.length > 0) {
