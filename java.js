@@ -34,10 +34,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // 3. Dynamic Hero Background Slideshow
     const heroImages = [
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80",
-        "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1920&q=80",
-        "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=1920&q=80",
-        "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1920&q=80"
+        "imgs/bg1.jpeg",
+        "/imgs/bg2.jpeg"
     ];
     const bgContainer = document.getElementById('hero-bg-container');
     
@@ -151,3 +149,64 @@ function resetForm() {
     if (form) form.reset();
     if (successMessage) successMessage.style.display = 'none';
 }
+
+
+// The list containing the changing lines
+// Texts to be written and erased sequentially
+ const data = [
+      {
+        title: "Totally Complete ",
+        subtitle: "2026 505 "
+      },
+        {
+        title: "  Weekly production Record ",
+        subtitle: "304,000 Kgs "
+      }
+    ];
+
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    const titleEl = document.getElementById('title-text');
+    const subtitleEl = document.getElementById('subtitle-text');
+
+    function typeEffect() {
+      const currentTitle = data[textIndex].title;
+      const currentSubtitle = data[textIndex].subtitle;
+
+      if (isDeleting) {
+        //Delete character
+        charIndex--;
+      } else {
+        //Add character
+        charIndex++;
+      }
+
+      // Update the text on the page
+      titleEl.innerText = currentTitle.substring(0, charIndex);
+      
+      // Show the subtitle when title typing is complete or update it with the text
+      subtitleEl.innerText = currentSubtitle.substring(0, Math.floor((charIndex / currentTitle.length) * currentSubtitle.length));
+
+     // Typing and deleting speed (in milliseconds)     
+      let typeSpeed = isDeleting ? 50 : 100;
+
+      if (!isDeleting && charIndex === currentTitle.length) {
+        // When sentence typing is complete, wait 2 seconds before starting to delete
+        typeSpeed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+       // When sentence deletion is finished, move to the next sentence and start typing
+        isDeleting = false;
+        textIndex = (textIndex + 1) % data.length;
+        typeSpeed = 500;
+      }
+
+      setTimeout(typeEffect, typeSpeed);
+    }
+
+    // Start the effect when the page loads 
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(typeEffect, 500);
+    });
