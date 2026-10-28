@@ -35,7 +35,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // 3. Dynamic Hero Background Slideshow
    const heroImages = [
     "imgs/bg1.jpeg",
-    "imgs/bg2.jpeg", // إزالة الشرطة المائلة من البداية
+    "imgs/bg2.jpeg",
+    "imgs/bg3.jpeg",
+    "imgs/bg4.jpeg",
 ];
     const bgContainer = document.getElementById('hero-bg-container');
     
@@ -54,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
             slides[currentIndex].classList.remove('active');
             currentIndex = (currentIndex + 1) % slides.length;
             slides[currentIndex].classList.add('active');
-        }, 5000);
+        }, 6000);
     }
 
     // 4. Counter Animation via IntersectionObserver

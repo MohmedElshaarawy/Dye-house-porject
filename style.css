@@ -22,11 +22,12 @@ html, body {
     position: absolute;
     inset: 0;
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
     opacity: 0;
     transition: opacity 1.5s ease-in-out, transform 6s ease-out;
     transform: scale(1);
+    
 }
 
 .hero-slide.active {
@@ -58,21 +59,31 @@ html, body {
 }
 
 
-
-
-/* مؤشر الكتابة الوامض (Cursor) */
       .cursor {
         display: inline-block;
         width: 3px;
-        background-color: #60a5fa; /* لون أزرق يتناسب مع تصميمك */
+        background-color: #60a5fa; 
         margin-left: 4px;
         animation: blink 0.7s infinite;
       }
+    
+      @keyframes slideFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-      @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-      }
-      #subtitle-text{
-        font-size: 3.25rem; /* حجم الخط الأساسي */
-      }
+.animate-slide-text {
+  animation: slideFadeUp 1s ease-out forwards;
+}
+
+#subtitle-text {
+  animation-delay: 0.3s; /* تأخير بسيط للسطر الثاني ليعطي شعوراً هرمياً ومتناسقاً */
+          font-size: 3.25rem; /* حجم الخط الأساسي */
+
+}
