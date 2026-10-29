@@ -42,52 +42,52 @@
 
 <body class="font-sans text-gray-800 bg-light antialiased selection:bg-secondary selection:text-white">
 
-   <!-- Navigation Bar -->
-<nav id="navbar" class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-20 items-center">
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
 
-            <!-- Logo -->
-            <div class="flex-shrink-0 flex items-center">
-                <a href="#home" class="flex items-center gap-2 group">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white font-extrabold text-xl shadow-lg transform group-hover:scale-105 transition-transform overflow-hidden">
-                        <img src="imgs/logo.jpg" alt="logo" class="w-full h-full object-cover">
-                    </div>
-                    <span class="font-bold text-xl sm:text-2xl text-primary tracking-wide">Jade<span class="text-secondary">Textile - Dye house</span></span>
-                </a>
-            </div>
-            <!-- Desktop Navigation Links -->
-            <div class="hidden md:flex space-x-6 items-center">
-                <a href="./index.html" class="text-gray-700 hover:text-secondary px-3 py-2 rounded-md text-base font-semibold transition-colors">Home</a>
-                <a href="#about" class="text-gray-700 hover:text-secondary px-3 py-2 rounded-md text-base font-semibold transition-colors">Last Updates</a>
-                <a href="./systems.html" class="text-gray-700 hover:text-secondary px-3 py-2 rounded-md text-base font-semibold transition-colors">Systems</a>
-                <a href="#machinery" class="text-gray-700 hover:text-secondary px-3 py-2 rounded-md text-base font-semibold transition-colors">Training & Assessments</a>
-                <a href="#contact" class="px-5 py-2.5 bg-secondary text-white font-medium rounded-lg shadow-md hover:bg-primary transition-all transform hover:-translate-y-0.5">Contact Us</a>
-            </div>
-            
-            <!-- Mobile Menu Butto-->
-            <div class="md:hidden flex items-center">
-                <button id="mobile-menu-btn" class="text-gray-700 hover:text-secondary focus:outline-none p-2 rounded-lg transition" aria-label="Toggle menu">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#home" class="flex items-center gap-2 group">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white font-extrabold text-xl shadow-lg transform group-hover:scale-105 transition-transform overflow-hidden">
+                            <img src="imgs/logo.jpg" alt="logo" class="w-full h-full object-cover">
+                        </div>
+                        <span class="font-bold text-xl sm:text-2xl text-primary tracking-wide">Jade<span class="text-secondary">Textile - Dye house</span></span>
+                    </a>
+                </div>
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="./index.html" class="text-gray-700 hover:text-secondary px-3 py-2 rounded-md text-base font-semibold transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-secondary px-3 py-2 rounded-md text-base font-semibold transition-colors">Last Updates</a>
+                    <a href="./systems.html" class="text-gray-700 hover:text-secondary px-3 py-2 rounded-md text-base font-semibold transition-colors">Systems</a>
+                    <a href="./training.html" class="text-gray-700 hover:text-secondary px-3 py-2 rounded-md text-base font-semibold transition-colors">Training & Assessments</a>
+                    <a href="#contact" class="px-5 py-2.5 bg-secondary text-white font-medium rounded-lg shadow-md hover:bg-primary transition-all transform hover:-translate-y-0.5">Contact Us</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-secondary focus:outline-none p-2 rounded-lg transition" aria-label="Toggle menu">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Mobile Dropdown Menu (القائمة اللي بتفتح لما تضغط على الزرار) -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute top-20 left-0 w-full z-40">
-        <div class="px-4 pt-3 pb-5 space-y-2 text-center">
-            <a href="#home" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-semibold text-gray-700 hover:bg-blue-50 hover:text-secondary">Home</a>
-            <a href="#about" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-semibold text-gray-700 hover:bg-blue-50 hover:text-secondary">Last Updates</a>
-            <a href="#services" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-semibold text-gray-700 hover:bg-blue-50 hover:text-secondary">Systems</a>
-            <a href="#machinery" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-semibold text-gray-700 hover:bg-blue-50 hover:text-secondary">Training & Assessments</a>
-            <a href="#contact" class="mobile-link block px-8 py-3 bg-secondary text-white font-bold rounded-xl shadow-lg hover:bg-blue-700 transition-all">Contact Us</a>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute top-20 left-0 w-full z-40">
+            <div class="px-4 pt-3 pb-5 space-y-2 text-center">
+                <a href="./index.html" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-semibold text-gray-700 hover:bg-blue-50 hover:text-secondary">Home</a>
+                <a href="./about.html" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-semibold text-gray-700 hover:bg-blue-50 hover:text-secondary">Last Updates</a>
+                <a href="./systems.html" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-semibold text-gray-700 hover:bg-blue-50 hover:text-secondary">Systems</a>
+                <a href="./training.html" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-semibold text-gray-700 hover:bg-blue-50 hover:text-secondary">Training & Assessments</a>
+                <a href="#contact" class="mobile-link block px-8 py-3 bg-secondary text-white font-bold rounded-xl shadow-lg hover:bg-blue-700 transition-all">Contact Us</a>
+            </div>
         </div>
-    </div>
+    </nav>
 
-</nav>
-<!-- Main Content Section -->
+    <!-- Main Content Section -->
     <main class="pt-28 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Page Header Banner -->
@@ -103,24 +103,112 @@
             
             <!-- Actions Buttons Group -->
             <div class="flex flex-wrap sm:flex-nowrap items-center gap-3 w-full md:w-auto">
-                <!-- Open Direct Sheet Link Button -->
-                <a href="https://docs.google.com/spreadsheets/d/1_KMogi7KLr7dVGgPfSXh1ToRn6mjB8zB2YFbYT4nFy4/edit?usp=sharing 
+                <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTfRR6S0E_Bk_ZWbPyZwB7L7TCA-liDhxl2KBTKZ6iiOtCJttNpEFoK7t52GPS4dg/pubhtml"
                    target="_blank" 
                    class="flex-1 sm:flex-initial flex items-center justify-center gap-2 bg-secondary/90 hover:bg-secondary text-white px-5 py-3 rounded-xl font-bold shadow-lg transition-all duration-200 border border-white/10 hover:shadow-blue-500/20">
                     <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
                     <span>Open Full Sheet</span>
                 </a>
-
-                <!-- Download Excel File Button -->
-                <a href="imgs/systemta.xlsx" download 
-                   class="flex-1 sm:flex-initial flex items-center justify-center gap-2 bg-white text-primary hover:bg-gray-50 px-5 py-3 rounded-xl font-bold shadow-lg transition-all duration-200 active:scale-95">
-                    <i class="fa-solid fa-file-excel text-emerald-600 text-lg"></i>
-                    <span>Download (.xlsx)</span>
-                </a>
             </div>
         </div>
 
-        <!-- Excel Live Dashboard Container -->
+        <!-- ===================================================== -->
+        <!-- NEW: 4 Systems Cards Section (الكروت الجديدة للأنظمة) -->
+        <!-- ===================================================== -->
+        <section class="mb-12">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900">Dye House Sub-Systems</h2>
+                    <p class="text-sm text-gray-500">اختر النظام للوصول للشيت المخصص له</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-40 overflow-hidden relative">
+                        <img src="./imgs/logo.jpg" alt="Dyeing Operations" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-primary/90 text-white text-xs font-semibold px-2.5 py-1 rounded-lg backdrop-blur-md">System 01</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-lg group-hover:text-secondary transition-colors">Dyeing Planning Sheet</h3>
+                            <p class="text-xs text-gray-500 mt-1">متابعة وجدولة تشغيلات الماكينات وعمليات الصباغة اليومية.</p>
+                        </div>
+                        <!-- ضع رابط شيت النظام الأول هنا -->
+                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTfRR6S0E_Bk_ZWbPyZwB7L7TCA-liDhxl2KBTKZ6iiOtCJttNpEFoK7t52GPS4dg/pubhtml" target="_blank" 
+                           class="w-full flex items-center justify-center gap-2 bg-slate-100 hover:bg-secondary hover:text-white text-gray-700 py-2.5 rounded-xl font-bold text-sm transition-all shadow-sm">
+                            <i class="fa-solid fa-file-spreadsheet"></i>
+                            <span>فتح شيت النظام</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-40 overflow-hidden relative">
+                        <img src="./imgs/logo.jpg" alt="Chemical House" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-primary/90 text-white text-xs font-semibold px-2.5 py-1 rounded-lg backdrop-blur-md">System 02</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-lg group-hover:text-secondary transition-colors">Chemicals Inventory</h3>
+                            <p class="text-xs text-gray-500 mt-1">سجل استهلاك المواد الكيميائية والكيماويات والكيماويات المتبقية.</p>
+                        </div>
+                        <!-- ضع رابط شيت النظام الثاني هنا -->
+                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTfRR6S0E_Bk_ZWbPyZwB7L7TCA-liDhxl2KBTKZ6iiOtCJttNpEFoK7t52GPS4dg/pubhtml" target="_blank" 
+                           class="w-full flex items-center justify-center gap-2 bg-slate-100 hover:bg-secondary hover:text-white text-gray-700 py-2.5 rounded-xl font-bold text-sm transition-all shadow-sm">
+                            <i class="fa-solid fa-file-spreadsheet"></i>
+                            <span>فتح شيت النظام</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-40 overflow-hidden relative">
+                        <img src="./imgs/logo.jpg" alt="Quality Control" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-primary/90 text-white text-xs font-semibold px-2.5 py-1 rounded-lg backdrop-blur-md">System 03</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-lg group-hover:text-secondary transition-colors">Quality Control Lab</h3>
+                            <p class="text-xs text-gray-500 mt-1">نتائج مطابقة الألوان والفحوصات المعملية واختبارات الثبات.</p>
+                        </div>
+                        <!-- ضع رابط شيت النظام الثالث هنا -->
+                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTfRR6S0E_Bk_ZWbPyZwB7L7TCA-liDhxl2KBTKZ6iiOtCJttNpEFoK7t52GPS4dg/pubhtml" target="_blank" 
+                           class="w-full flex items-center justify-center gap-2 bg-slate-100 hover:bg-secondary hover:text-white text-gray-700 py-2.5 rounded-xl font-bold text-sm transition-all shadow-sm">
+                            <i class="fa-solid fa-file-spreadsheet"></i>
+                            <span>فتح شيت النظام</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-40 overflow-hidden relative">
+                        <img src="./imgs/logo.jpg" alt="Finishing Plant" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-primary/90 text-white text-xs font-semibold px-2.5 py-1 rounded-lg backdrop-blur-md">System 04</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-lg group-hover:text-secondary transition-colors">Finishing & Packing</h3>
+                            <p class="text-xs text-gray-500 mt-1">شيت عمليات التجهيز النهائي والتجميع والتغليف قبل الشحن.</p>
+                        </div>
+                        <!-- ضع رابط شيت النظام الرابع هنا -->
+                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTfRR6S0E_Bk_ZWbPyZwB7L7TCA-liDhxl2KBTKZ6iiOtCJttNpEFoK7t52GPS4dg/pubhtml" target="_blank" 
+                           class="w-full flex items-center justify-center gap-2 bg-slate-100 hover:bg-secondary hover:text-white text-gray-700 py-2.5 rounded-xl font-bold text-sm transition-all shadow-sm">
+                            <i class="fa-solid fa-file-spreadsheet"></i>
+                            <span>فتح شيت النظام</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Excel Live Dashboard Container (تم تصغير حجمه ليكون مدمجاً) -->
         <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden transition-all duration-300">
             
             <!-- System Bar Top Bar -->
@@ -130,7 +218,7 @@
                         <i class="fa-solid fa-table"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold text-sm sm:text-base text-slate-100">Live Dye House Production Sheet</h3>
+                        <h3 class="font-bold text-sm sm:text-base text-slate-100">Main Dye House Live View</h3>
                         <p class="text-xs text-slate-400">Jade Textile Ismailia - Continuous Data Sync</p>
                     </div>
                 </div>
@@ -139,19 +227,19 @@
                     <span class="hidden sm:inline-block px-3 py-1 bg-slate-800 rounded-md border border-slate-700">
                         <i class="fa-regular fa-clock mr-1 text-accent"></i> Real-time View
                     </span>
-                    <a href="https://docs.google.com/spreadsheets/d/1_KMogi7KLr7dVGgPfSXh1ToRn6mjB8zB2YFbYT4nFy4/edit?usp=sharing" 
+                    <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTfRR6S0E_Bk_ZWbPyZwB7L7TCA-liDhxl2KBTKZ6iiOtCJttNpEFoK7t52GPS4dg/pubhtml" 
                        target="_blank" 
                        class="text-blue-400 hover:text-blue-300 hover:underline flex items-center gap-1 font-semibold">
-                       <span>Expand View</span>
-                       <i class="fa-solid fa-expand text-xs"></i>
+                        <span>Expand View</span>
+                        <i class="fa-solid fa-expand text-xs"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- Frame Wrapper for Smooth Scrolling & Interaction -->
-            <div class="w-full h-[750px] bg-slate-100 relative group">
+            <!-- Frame Wrapper (تم تقليل الارتفاع إلى h-[500px]) -->
+            <div class="w-full h-[500px] bg-slate-100 relative group">
                 <iframe 
-                    src="https://docs.google.com/spreadsheets/d/1_KMogi7KLr7dVGgPfSXh1ToRn6mjB8zB2YFbYT4nFy4/edit?usp=sharing" 
+                    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTfRR6S0E_Bk_ZWbPyZwB7L7TCA-liDhxl2KBTKZ6iiOtCJttNpEFoK7t52GPS4dg/pubhtml?widget=true&amp;headers=false" 
                     width="100%" 
                     height="100%" 
                     frameborder="0"
@@ -159,7 +247,7 @@
                     class="w-full h-full rounded-b-3xl">
                     <div class="p-8 text-center bg-white rounded-2xl shadow-md m-6">
                         <p class="text-gray-600 mb-4 font-semibold">عفواً، المتصفح الخاص بك لا يدعم عرض المعاينة المباشرة.</p>
-                        <a href="https://docs.google.com/spreadsheets/d/1_KMogi7KLr7dVGgPfSXh1ToRn6mjB8zB2YFbYT4nFy4/edit?usp=sharing" target="_blank" class="inline-block bg-secondary text-white px-6 py-2.5 rounded-xl font-bold">فتح الشيت مباشرة في جوجل شيت</a>
+                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTfRR6S0E_Bk_ZWbPyZwB7L7TCA-liDhxl2KBTKZ6iiOtCJttNpEFoK7t52GPS4dg/pubhtml" target="_blank" class="inline-block bg-secondary text-white px-6 py-2.5 rounded-xl font-bold">فتح الشيت مباشرة في جوجل شيت</a>
                     </div>
                 </iframe>
             </div>
@@ -173,33 +261,6 @@
 
     </main>
 
-    <!-- Simple Script for Mobile Menu Toggle -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileLinks = document.querySelectorAll('.mobile-link');
-
-            if (mobileMenuBtn && mobileMenu) {
-                mobileMenuBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    mobileMenu.classList.toggle('hidden');
-                });
-
-                mobileLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden');
-                    });
-                });
-
-                document.addEventListener('click', (e) => {
-                    if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                        mobileMenu.classList.add('hidden');
-                    }
-                });
-            }
-        });
-    </script>
     <footer class="bg-dark text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">

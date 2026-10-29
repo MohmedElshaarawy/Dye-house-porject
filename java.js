@@ -1,12 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
     
     // 1. Initialize AOS Library
-    AOS.init({
-        duration: 800,
-        once: true,
-        offset: 80,
-        easing: 'ease-in-out'
-    });
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 80,
+            easing: 'ease-in-out'
+        });
+    }
 
     // 2. Mobile Menu Toggle Logic
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -33,12 +35,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // 3. Dynamic Hero Background Slideshow
-   const heroImages = [
-    "imgs/bg1.jpeg",
-    "imgs/bg2.jpeg",
-    "imgs/bg3.jpeg",
-    "imgs/bg4.jpeg",
-];
+    const heroImages = [
+        "imgs/bg1.jpeg",
+        "imgs/bg2.jpeg",
+        "imgs/bg3.jpeg",
+        "imgs/bg4.jpeg"
+    ];
     const bgContainer = document.getElementById('hero-bg-container');
     
     if (bgContainer && heroImages.length > 0) {
@@ -49,14 +51,15 @@ document.addEventListener("DOMContentLoaded", function() {
             bgContainer.appendChild(slide);
         });
 
-        const slides = document.querySelectorAll('.hero-slide');
-        let currentIndex = 0;
-
-        setInterval(() => {
-            slides[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % slides.length;
-            slides[currentIndex].classList.add('active');
-        }, 6000);
+        const slides = bgContainer.querySelectorAll('.hero-slide');
+        if (slides.length > 0) {
+            let currentIndex = 0;
+            setInterval(() => {
+                slides[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % slides.length;
+                slides[currentIndex].classList.add('active');
+            }, 6000);
+        }
     }
 
     // 4. Counter Animation via IntersectionObserver
@@ -85,23 +88,23 @@ document.addEventListener("DOMContentLoaded", function() {
         updateCounter();
     };
 
-    const observerOptions = {
-        root: null,
-        threshold: 0.3
-    };
+    if (counters.length > 0) {
+        const observerOptions = {
+            root: null,
+            threshold: 0.3
+        };
 
-    const observer = new IntersectionObserver((entries, observerInstance) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                runCounter(entry.target);
-                observerInstance.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+        const observer = new IntersectionObserver((entries, observerInstance) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    runCounter(entry.target);
+                    observerInstance.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
 
-    counters.forEach(counter => {
-        observer.observe(counter);
-    });
+        counters.forEach(counter => observer.observe(counter));
+    }
 
     // 5. Contact Form Submission Simulation
     const contactForm = document.getElementById('contactForm');
@@ -142,6 +145,56 @@ document.addEventListener("DOMContentLoaded", function() {
             updateIcons();
         });
     }
+
+    // 7. Typing Effect (Secured inside DOMContentLoaded)
+    const data = [
+        {
+            title: "Total things completed ",
+            subtitle: "2026 505 "
+        },
+        {
+            title: "  Weekly production Record ",
+            subtitle: "304,000 Kgs "
+        }
+    ];
+
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    const titleEl = document.getElementById('title-text');
+    const subtitleEl = document.getElementById('subtitle-text');
+
+    if (titleEl && subtitleEl && data.length > 0) {
+        function typeEffect() {
+            const currentTitle = data[textIndex].title;
+            const currentSubtitle = data[textIndex].subtitle;
+
+            if (isDeleting) {
+                charIndex--;
+            } else {
+                charIndex++;
+            }
+
+            titleEl.innerText = currentTitle.substring(0, charIndex);
+            subtitleEl.innerText = currentSubtitle.substring(0, Math.floor((charIndex / currentTitle.length) * currentSubtitle.length));
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentTitle.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % data.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+
+        setTimeout(typeEffect, 500);
+    }
 });
 
 // Global Reset Form Function
@@ -152,63 +205,3 @@ function resetForm() {
     if (successMessage) successMessage.style.display = 'none';
 }
 
-
-// The list containing the changing lines
-// Texts to be written and erased sequentially
- const data = [
-      {
-        title: "Total things completed ",
-        subtitle: "2026 505 "
-      },
-        {
-        title: "  Weekly production Record ",
-        subtitle: "304,000 Kgs "
-      }
-    ];
-
-    let textIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    const titleEl = document.getElementById('title-text');
-    const subtitleEl = document.getElementById('subtitle-text');
-
-    function typeEffect() {
-      const currentTitle = data[textIndex].title;
-      const currentSubtitle = data[textIndex].subtitle;
-
-      if (isDeleting) {
-        //Delete character
-        charIndex--;
-      } else {
-        //Add character
-        charIndex++;
-      }
-
-      // Update the text on the page
-      titleEl.innerText = currentTitle.substring(0, charIndex);
-      
-      // Show the subtitle when title typing is complete or update it with the text
-      subtitleEl.innerText = currentSubtitle.substring(0, Math.floor((charIndex / currentTitle.length) * currentSubtitle.length));
-
-     // Typing and deleting speed (in milliseconds)     
-      let typeSpeed = isDeleting ? 50 : 100;
-
-      if (!isDeleting && charIndex === currentTitle.length) {
-        // When sentence typing is complete, wait 2 seconds before starting to delete
-        typeSpeed = 2000;
-        isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
-       // When sentence deletion is finished, move to the next sentence and start typing
-        isDeleting = false;
-        textIndex = (textIndex + 1) % data.length;
-        typeSpeed = 500;
-      }
-
-      setTimeout(typeEffect, typeSpeed);
-    }
-
-    // Start the effect when the page loads 
-    document.addEventListener("DOMContentLoaded", () => {
-      setTimeout(typeEffect, 500);
-    });
