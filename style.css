@@ -1,47 +1,36 @@
+/* ==========================================================================
+   Jade Textile - Production & Operations Portal Stylesheet
+   Modern, Optimized & Hardware-Accelerated CSS
+   ========================================================================== */
+   /* googel Font  */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
-/* --- Base Adjustments & Smooth Scrolling --- */
+/* --- 1. Base Adjustments & Typography --- */
 html, body {
     overflow-x: hidden;
     scroll-behavior: smooth;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- Hero Background Slideshow Container Styling --- */
-#hero-bg-container {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    overflow: hidden;
+/* Custom Selection Highlight */
+::selection {
+    background-color: #2563EB;
+    color: #FFFFFF;
 }
 
-/* Smoothly Animated Background Image Slider Styling (Div-based) */
-.hero-slide {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out, transform 6s ease-out;
-    transform: scale(1);
-    
+/* --- 2. Custom Sleek Scrollbar (Cross-Browser) --- */
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #CBD5E1 #F8FAFC;
 }
 
-.hero-slide.active {
-    opacity: 1;
-    transform: scale(1.05);
-}
-
-/* --- Mobile Menu Transition --- */
-#mobile-menu {
-    transition: all 0.3s ease-in-out;
-}
-
-/* --- Custom Scrollbar for Smooth UX --- */
+/* WebKit (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
     width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -51,38 +40,134 @@ html, body {
 ::-webkit-scrollbar-thumb {
     background: #CBD5E1;
     border-radius: 4px;
+    transition: background-color 0.2s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: #94A3B8;
 }
 
+/* --- 3. Hero Background Slideshow Container & Layering --- */
+#hero-bg-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
 
-      .cursor {
-        display: inline-block;
-        width: 3px;
-        background-color: #60a5fa; 
-        margin-left: 4px;
-        animation: blink 0.7s infinite;
-      }
-    
-      @keyframes slideFadeUp {
-  0% {
+/* GPU-Accelerated Hero Slides */
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
+    transform: scale(1.0);
+    transform-origin: center center;
+    transition: opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1), transform 6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+}
+
+.hero-slide.active {
     opacity: 1;
-    transform: translateY(0);
-  }
+    transform: scale(1.04);
+}
+
+/* --- 4. Typing Animation & Cursor --- */
+.cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1.15em;
+    vertical-align: -0.15em;
+    background-color: #60A5FA;
+    margin-left: 4px;
+    animation: blinkCursor 0.75s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes blinkCursor {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Text Entry Slide-Up Animation */
+@keyframes slideFadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .animate-slide-text {
-  animation: slideFadeUp 1s ease-out forwards;
+    animation: slideFadeUp 0.8s ease-out forwards;
 }
 
 #subtitle-text {
-  animation-delay: 0.3s; /* تأخير بسيط للسطر الثاني ليعطي شعوراً هرمياً ومتناسقاً */
-          font-size: 3.25rem; /* حجم الخط الأساسي */
+    animation-delay: 0.2s;
+    /* Font sizing is handled responsively via Tailwind classes to prevent jitter & layout overflow */
+}
 
+/* --- 5. Mobile Menu Transition --- */
+#mobile-menu {
+    transition: max-height 0.3s ease-in-out, opacity 0.25s ease-in-out;
+}
+
+/* --- 6. Card Hardware Acceleration & Micro-Interactions --- */
+.system-card,
+.training-card {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform, box-shadow;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.2s ease;
+}
+
+.system-card:hover,
+.training-card:hover {
+    transform: translateY(-4px) translateZ(0);
+}
+
+/* --- 7. Full-Screen Live View / Preview Sections --- */
+#live-view-section,
+#preview-section {
+    animation: fadeInView 0.3s ease-out forwards;
+}
+
+@keyframes fadeInView {
+    from {
+        opacity: 0;
+        transform: scale(0.995);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Iframe Container Styling */
+#live-view-iframe,
+#preview-iframe {
+    background-color: #0F172A;
+}
+
+/* --- 8. Touch & Accessibility Focus States --- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid #2563EB;
+    outline-offset: 2px;
 }
