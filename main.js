@@ -41,6 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 1.9 Global Keyboard Shortcuts (e.g. Esc to close Viewers)
     initGlobalShortcuts();
+
+    // 1.10 Home Page ScrollSpy for Active Navigation Link
+    initHomeScrollSpy();
 });
 
 
@@ -112,6 +115,7 @@ function initHeroSlideshow() {
     const heroImages = [
         "imgs/bg1.jpeg",
         "imgs/bg2.jpeg",
+        "imgs/bg3.jpeg",
         "imgs/bg4.jpeg",
         "imgs/bg5.jpg"
     ];
@@ -585,23 +589,47 @@ function initGlobalShortcuts() {
 }
 
 
-
 // ==========================================================================
-// 7. Global Keyboard Shortcuts & Accessibility
+// 8. Home Page ScrollSpy for Active Navigation Link
 // ==========================================================================
 
-function initGlobalShortcuts() {
-    document.addEventListener('keydown', function (e) {
-        // Press Escape to dismiss active full-screen viewers
-        if (e.key === 'Escape') {
-            const liveView = document.getElementById('live-view-section');
-            const preview = document.getElementById('preview-section');
+function initHomeScrollSpy() {
+    const homeSection = document.getElementById('home');
+    const aboutSection = document.getElementById('about');
+    if (!homeSection || !aboutSection) return;
 
-            if (liveView && !liveView.classList.contains('hidden')) {
-                window.closeLiveView();
-            } else if (preview && !preview.classList.contains('hidden')) {
-                window.closePreview();
-            }
+    const desktopNav = document.querySelector('.hidden.md\\:flex');
+    if (!desktopNav) return;
+
+    const homeLink = desktopNav.querySelector('a[href*="index.html"]:not([href*="#"])');
+    const aboutLink = desktopNav.querySelector('a[href*="#about"]');
+    if (!homeLink || !aboutLink) return;
+
+    const activeClasses = ['text-secondary', 'font-bold', 'border-b-2', 'border-secondary'];
+    const inactiveClasses = ['text-gray-700', 'hover:text-secondary', 'font-semibold'];
+
+    const setActive = (activeEl, inactiveEl) => {
+        inactiveClasses.forEach(c => activeEl.classList.remove(c));
+        activeClasses.forEach(c => activeEl.classList.add(c));
+
+        activeClasses.forEach(c => inactiveEl.classList.remove(c));
+        inactiveClasses.forEach(c => inactiveEl.classList.add(c));
+    };
+
+    let scrollTicking = false;
+    window.addEventListener('scroll', () => {
+        if (!scrollTicking) {
+            window.requestAnimationFrame(() => {
+                const aboutTop = aboutSection.getBoundingClientRect().top;
+                // If the About section has scrolled into the top half of the screen
+                if (aboutTop <= 250) {
+                    setActive(aboutLink, homeLink);
+                } else {
+                    setActive(homeLink, aboutLink);
+                }
+                scrollTicking = false;
+            });
+            scrollTicking = true;
         }
-    });
+    }, { passive: true });
 }

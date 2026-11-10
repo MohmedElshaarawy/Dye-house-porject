@@ -2,9 +2,6 @@
    Jade Textile - Production & Operations Portal Stylesheet
    Modern, Optimized & Hardware-Accelerated CSS
    ========================================================================== */
-   /* googel Font  */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-
 /* --- 1. Base Adjustments & Typography --- */
 html, body {
     overflow-x: hidden;
